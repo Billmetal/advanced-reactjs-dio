@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# ReactJs Avançado
+
+Práticas avançadas em projetos com ReactJs , curso realizado pela Digital Innovation One
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
