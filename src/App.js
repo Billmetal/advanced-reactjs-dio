@@ -1,46 +1,21 @@
-import React, { Component } from "react";
-import Twitter from "./Twitter";
+import React, { useState, useEffect } from "react";
+import { ThemeContext, themes } from "./Theme";
+import Card from "./Card";
 
-class App extends Component { 
+function App() { 
+  const [token, setToken] = useState();
 
-  state = {
-    loading: false,
-    actived: true
-  };
-
-  componentDidMount() { 
+  useEffect(() => { 
     setTimeout(() => { 
-      this.setState({
-        loading: true
-      });
-    }, 3000);
-  }
+      setToken("151d5s1d65df1d51fsd5");
+    },4000);
+  },[setToken]);
 
-  onRemove = () => { 
-    this.setState({
-      actived: false
-    });
-  };
-
-  render() { 
-
-    const posts = [{
-      title: "xpto",
-      description: "foo"
-    },{
-      title: "xpto",
-      description: "foo"
-    }];
-
-    return (
-      <div>
-        <button onClick={this.onRemove}>Remover Componente</button>
-        {this.state.actived && (
-          <Twitter posts={posts} loading={this.state.loading} />
-        )}
-      </div>
-    );
-  }
+  return (
+    <ThemeContext.Provider value={{ ...themes.primary, token }}>
+      <Card />
+    </ThemeContext.Provider>
+  )
 }
 
 export default App;
